@@ -49,6 +49,7 @@
 #key {Alt-9} {CleanBuffer;#if {%NumWords(@{@BufferName},"|") < 9} {#say {No message.} Voiceonly} {#say {%word(@{@BufferName},"|",%eval(%NumWords(@{@BufferName},"|") - 8)}) Voiceonly}}
 #key {Alt-0} {CleanBuffer;#if {%NumWords(@{@BufferName},"|") < 10} {#say {No message.} Voiceonly} {#say {%word(@{@BufferName},"|",%eval(%NumWords(@{@BufferName},"|") - 9)}) Voiceonly}}
 
-#alias {ClearAllBuffers} {#unload misc/Buffers.set; #load misc/buffers.set; SilentlyLoadBuffers; #play {Star Conquest/General/Buffers/BufferAction.wav} @vol; #say {The items contained in your active buffers have been cleared successfully!} Voiceonly}
+#alias {ClearAllBuffers} {#unload Scripts/Buffers.set; #load Scripts/Buffers.set; SilentlyLoadBuffers; #play {Star Conquest/General/Buffers/BufferAction.wav} @vol; #say {The items contained in your active buffers have been cleared successfully!} Voiceonly}
 #key Control-Alt-Shift-Delete {ClearAllBuffers}
-#alias FixBuffers {#load misc/buffers.set;SaveBuffers; #say {buffer errors should now be corrected.}}
+#alias FixBuffers {#load Scripts/buffers.set;SaveBuffers; #say {buffer errors should now be corrected.}}
+
